@@ -17,6 +17,9 @@ int main() {
 		std::cout << "Enter your age:" << std::endl;
 		std::cin >> age;
 	}
-	std::cout << "Hello, " << name << ". You are " << age << " years old." << std::endl;
+
+	if (age < 25) std::cout << "Hello, " << name << ". You are only " << age << " years old." << std::endl;
+	if (age < 50 && age >= 25) std::cout << "Hello, " << name << ". You are already " << age << " years old." << std::endl;
+	if (age >= 50) std::cout << "Hello, " << name << ". You are very wise for your age." << std::endl;
 	return 0;
 }
