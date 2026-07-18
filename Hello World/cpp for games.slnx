@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../IO/IO.vcxproj" />
-  <Project Path="Hello World.vcxproj" />
+  <Project Path="../IO/IO.vcxproj" Id="ec478eed-9818-46d7-bdcf-5232add4fb90" />
+  <Project Path="../Type Conversion/Type Conversion.vcxproj" Id="5d537056-2dcb-47df-a92c-909e434007e2" />
+  <Project Path="Hello World.vcxproj" Id="404286cc-d398-4123-865c-fba907714302" />
 </Solution>
