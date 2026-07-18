@@ -12,4 +12,9 @@ int main() {
 	std::cout << i << std::endl;
 	std::cout << c << std::endl;
 	std::cout << b << std::endl;
+
+	char c1 = '5';
+	int i1 = c1 - '0';
+
+	std::cout << i1 << std::endl;
 }

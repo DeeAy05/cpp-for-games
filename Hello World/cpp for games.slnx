@@ -4,6 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../IO/IO.vcxproj" Id="ec478eed-9818-46d7-bdcf-5232add4fb90" />
+  <Project Path="../Simple Calculator/Simple Calculator.vcxproj" Id="b269cc1a-3e83-4f78-bce5-1ef9b0b89d53" />
   <Project Path="../Type Conversion/Type Conversion.vcxproj" Id="5d537056-2dcb-47df-a92c-909e434007e2" />
   <Project Path="Hello World.vcxproj" Id="404286cc-d398-4123-865c-fba907714302" />
 </Solution>
