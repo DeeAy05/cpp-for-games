@@ -48,5 +48,8 @@ int main()
 	std::cout << "The minumum value entered: " << *min << std::endl;
 	std::cout << "The average value entered: " << sum / arraySize << std::endl;
 	delete[] array;
+	array = nullptr;
+	min = nullptr;
+	max = nullptr;
 	return 0;
 }
