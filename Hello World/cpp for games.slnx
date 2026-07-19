@@ -4,6 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../Dynamic Array/Dynamic Array.vcxproj" Id="1eb5491e-aa17-4f48-a98c-90b203483be5" />
+  <Project Path="../Enhanced Calculator/Enhanced Calculator.vcxproj" Id="8ddc7a6f-a67a-4c25-bb78-08bbea67cc87" />
   <Project Path="../IO/IO.vcxproj" Id="ec478eed-9818-46d7-bdcf-5232add4fb90" />
   <Project Path="../Simple Calculator/Simple Calculator.vcxproj" Id="b269cc1a-3e83-4f78-bce5-1ef9b0b89d53" />
   <Project Path="../Swap/Swap.vcxproj" Id="8d988382-adf1-4961-9ad9-3d768e1731c4" />
