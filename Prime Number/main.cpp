@@ -16,7 +16,10 @@ int main() {
 
 	uint32_t number = static_cast<uint32_t>(n);
 
-	if (number == 1) isPrime = true;
+	if (number == 1) {
+		std::cout << number << " is not a prime number";
+		return 0;
+	}
 
 	for (int i = 1; i < number; ++i) {
 		if (number % i == 0 && i != 1) {
