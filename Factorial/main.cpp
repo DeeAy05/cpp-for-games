@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 
-uint32_t factorial(uint32_t n) {
+uint64_t factorial(uint32_t n) {
 	if (n == 0) return 1;
 	else return n * factorial(n - 1);
 }
@@ -9,7 +9,7 @@ uint32_t factorial(uint32_t n) {
 int main()
 {
 	int a;
-	uint32_t ua;
+	uint64_t ua;
 	std::cout << "Enter any natural number: ";
 	std::cin >> a;
 	while (std::cin.fail() || a < 0) {
@@ -19,7 +19,7 @@ int main()
 		std::cout << "Enter any natural number: ";
 		std::cin >> a;
 	}
-	ua = static_cast<uint32_t>(a);
+	ua = static_cast<uint64_t>(a);
 	if (factorial(ua) == 0) {
 		std::cout << "The factorial of " << ua << " is way too large";
 	}
