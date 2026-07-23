@@ -10,21 +10,24 @@ int main()
 {
 	int a;
 	uint64_t ua;
-	std::cout << "Enter any natural number: ";
-	std::cin >> a;
-	while (std::cin.fail() || a < 0) {
-		std::cerr << "ERROR: invalid symbol or out of scope" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	while (true) {
 		std::cout << "Enter any natural number: ";
 		std::cin >> a;
+		while (std::cin.fail() || a < 0) {
+			std::cerr << "ERROR: invalid symbol or out of scope" << std::endl;
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Enter any natural number: ";
+			std::cin >> a;
+		}
+		ua = static_cast<uint64_t>(a);
+		if (factorial(ua) == 0) {
+			std::cout << "The factorial of " << ua << " is way too large";
+		}
+		else {
+			std::cout << "Factorial of " << ua << " is " << factorial(ua) << std::endl;
+		}
 	}
-	ua = static_cast<uint64_t>(a);
-	if (factorial(ua) == 0) {
-		std::cout << "The factorial of " << ua << " is way too large";
-	}
-	else {
-		std::cout << "Factorial of " << ua << " is " << factorial(ua) << std::endl;
-	}
+
 	return 0;
 }
