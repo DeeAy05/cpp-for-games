@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 
-float max(float arr[], int n) {
+float max(const float* arr, int n) {
 	float m = *arr;
 	for (int i = 0; i < n; ++i) {
 		if (m < arr[i]) {
@@ -11,7 +11,7 @@ float max(float arr[], int n) {
 	return m;
 }
 
-float min(float arr[], int n) {
+float min(const float* arr, int n) {
 	float m = *arr;
 	for (int i = 0; i < n; ++i) {
 		if (m > arr[i]) {
@@ -20,17 +20,17 @@ float min(float arr[], int n) {
 	}
 	return m;
 }
-float sum(float arr[], int n) {
+float sum(const float* arr, int n) {
 	float sum = 0;
 	for (int i = 0; i < n; ++i) {
 		sum += arr[i];
 	}
 	return sum;
 }
-float mean(float arr[], int n) {
+float mean(const float* arr, int n) {
 	return sum(arr, n) / n;
 }
-float var(float arr[], int n) {
+float var(const float* arr, int n) {
 	float m = mean(arr, n);
 	float sum;
 	for (int i = 0; i < n; ++i) {
@@ -38,7 +38,7 @@ float var(float arr[], int n) {
 	}
 	return sum / n;
 }
-float stdDev(float arr[], int n) {
+float stdDev(const float* arr, int n) {
 	return sqrtf(var(arr, n));
 }
 
