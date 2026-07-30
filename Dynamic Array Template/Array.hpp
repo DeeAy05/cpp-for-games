@@ -65,12 +65,11 @@ public:
 
 	void reserve(size_t newCapacity)
 	{
-		if (newCapacity == m_capacity) return;
-		T* newArray = new T[size];
-		if (m_size < size) std::copy(this, this + m_size, newArray);
-		else std::copy(m_data, m_data + newCapacity, newArray);
+		if (newCapacity <= m_capacity) return;
+		T* newArray = new T[newCapacity];
+		std::copy(m_data, m_data + m_size, newArray);
 		delete[] m_data;
-		m_data = std::move(newArray);
+		m_data = newArray;
 		m_capacity = newCapacity;
 
 	}
@@ -81,11 +80,12 @@ public:
 		return self.m_data[i];
 	}
 
-	void add(const T& data) {
-		if (m_capacity == m_size) reserve(m_capacity * 2);
-		m_data[size] = data;
+	void add(const T& value) {
+		if (m_capacity <= m_size) reserve(m_capacity * 2);
+		m_data[m_size] = value;
 		++m_size;
 	}
+
 	bool isEmpty() const {
 		return m_size == 0;
 	}
@@ -98,5 +98,36 @@ public:
 	template <typename Self>
 	T* data(this Self&& self) {
 		return self.m_data;
+	}
+
+	class Iterator {
+	private:
+		T* curPtr;
+	public:
+		Iterator() : curPtr(nullptr) {}
+		explicit Iterator(T* p) : curPtr(p) {}
+
+		T& operator*() const {
+			return *curPtr;
+		}
+		T* operator++() {
+			return ++curPtr;
+		}
+		T* operator--() {
+			return --curPtr;
+		}
+		bool operator==(const Iterator& rhs) {
+			return curPtr == rhs.curPtr;
+		}
+		bool operator!=(const Iterator& rhs) {
+			return curPtr != rhs.curPtr;
+		}
+	};
+
+	Iterator begin() const {
+		return Iterator(m_data);
+	}
+	Iterator end() const {
+		return Iterator(m_data + m_size);
 	}
 };

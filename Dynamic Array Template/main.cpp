@@ -2,6 +2,7 @@
 #include <utility>
 #include <iostream>
 #include <cassert>
+#include <numeric>
 int main()
 {
 	Array<int> arr;
@@ -37,5 +38,17 @@ int main()
 	assert(arr3.isEmpty());
 	std::cout << "Move assignment is successful" << std::endl;
 
+	auto it1 = arr.begin();
+	assert(it1 == arr.begin());
 
+	auto it2 = arr.end();
+	assert(it2 == arr.end());
+	int i = 1;
+	arr.add(i);
+	arr.add(13);
+	for (auto i : arr) {
+		std::cout << i << std::endl;
+	}
+	int sum = std::accumulate(arr.begin(), arr.end(), 0);
+	std::cout << sum;
 }
