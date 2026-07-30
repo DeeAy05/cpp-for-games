@@ -36,4 +36,6 @@ int main()
 	}
 	assert(arr3.isEmpty());
 	std::cout << "Move assignment is successful" << std::endl;
+
+
 }
